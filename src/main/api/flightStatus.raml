@@ -1,0 +1,71 @@
+#%RAML 1.0
+title: Flight Availability Details API
+baseUri: http://server/api/account
+version: v0.1
+
+documentation:
+  - title: Flight Availability Details MULE API
+    content: Airlines API
+    
+/flightAvailabilityDetails: 
+  displayName: Flight Availability Details API
+  get:
+    description: Used to get the details of Flight
+    queryParameters:
+        FromCity:
+          description: Enter From City 
+          type: string
+          required: true
+          example: Hyderabad
+        ToCity:
+          description: Enter To City
+          type: string
+          required: true
+          example: Hyderabad
+        Date:
+          description: Enter Date
+          type: string
+          required: true
+          example: 2017-12-11
+    responses:
+        200:
+          body:
+            application/json:
+              schema: !include schemas/flight_status_rsp_schema.json
+              example: !include examples/flight_status_rsp_example.json
+        400:
+          description: !include documentation/400-description.txt
+          body:
+            application/json:
+              schema: !include schemas/fault-schema.json
+              example: !include examples/400.json
+        404:
+          description: !include documentation/404-description.txt
+          body:
+             application/json:
+               schema: !include schemas/fault-schema.json
+               example: !include examples/404.json
+        405:
+          description: !include documentation/405-description.txt
+          body:
+              application/json:
+               schema: !include schemas/fault-schema.json
+               example: !include examples/405.json
+        407:
+          description: !include documentation/407-description.txt
+          body:
+              application/json:
+               schema: !include schemas/fault-schema.json
+               example: !include examples/407.json
+        415:
+           description: !include documentation/415-description.txt
+           body:
+              application/json:
+               schema: !include schemas/fault-schema.json
+               example: !include examples/415.json
+        500:
+         description: !include documentation/500-description.txt
+         body:
+            application/json:
+             schema: !include schemas/fault-schema.json
+             example: !include examples/500.json

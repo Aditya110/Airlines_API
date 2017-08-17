@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "common": {
+      "type": "object",
+      "properties": {
+        "messageId": {
+          "type": "string"
+        },
+        "responseTime": {
+          "type": "string"
+        },
+        "sentTime": {
+          "type": "string"
+        },
+        "returnCode": {
+          "type": "string"
+        },
+        "returnReason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "messageId",
+        "responseTime",
+        "sentTime",
+        "returnCode",
+        "returnReason"
+      ]
+    }
+  },
+  "required": [
+    "common"
+  ]
+}

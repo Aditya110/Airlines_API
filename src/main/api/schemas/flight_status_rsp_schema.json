@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "airlines": {
+      "type": "object",
+      "properties": {
+        "FromCity": {
+          "type": "string"
+        },
+        "ToCity": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string"
+        },
+        "FlightName": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
